@@ -17,7 +17,7 @@ async function main() {
         }
       },
       onRampTransaction: {
-        create: { 
+        create: {
           startTime: new Date(),
           status: "Success",
           amount: 20000,

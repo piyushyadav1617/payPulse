@@ -1,14 +1,14 @@
-import { CardDemo } from "../../_components/randomCard";
 import { Wrapper } from "../pageWrapper";
-
+import { SendCard } from "../../_components/sendCard";
 
 
 const P2p = () => {
   return (
 
     <Wrapper title="Transfer money to another User">
-      <div className="flex flex-wrap">
-        
+      <div className="w-full h-full flex items-center justify-center ">
+      <SendCard />
+
       </div>
     </Wrapper>
   );

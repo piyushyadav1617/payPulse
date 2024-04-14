@@ -19,7 +19,7 @@ import {
 } from "@repo/ui/components/ui/sheet";
 
 import React from "react";
-import { NavLarge, NavSmall } from "./components/navItem";
+import { NavLarge, NavSmall } from "../_components/navItem";
 import { UserNav } from "../_components/userNav";
 import { ModeToggle } from "../_components/modeToggle";
 export default function DashboardLayout({
@@ -128,11 +128,5 @@ const navigationItems = [
     name: "Transactions",
     link: "/dashboard/transactions",
     icon: <Clock4 className="h-4 w-4" />,
-  },
-  {
-    id: 4,
-    name: "Account",
-    link: "/dashboard/account",
-    icon: <User className="h-4 w-4" />,
-  },
+  }
 ];

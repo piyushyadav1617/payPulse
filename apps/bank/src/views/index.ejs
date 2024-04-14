@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .payment-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .payment-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><%= bank %></h1>
+        <p>Welcome to the <%= bank %> payment portal. Please review your payment details and click the button below to complete your payment.</p>
+        <h2>Payment Details</h2>
+        <p><strong>Amount:</strong>Rs.<%= amount/100 %></p>
+        <p><strong>Description:</strong> Add to PayPulse wallet</p>
+        <!-- <form action=""></form> -->
+        <button class="payment-button" onclick="pay()">Complete Payment</button>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const userId= params.get("userId")
+        const token= params.get("token")
+        const amount= params.get("amount")
+
+        async function pay(){
+            const res = fetch(`http://localhost:3004/?token=${token}&amount=${amount}&userId=${userId}`,{
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                method:"POST"
+            })
+
+            window.location.href = `http://localhost:3000/dashboard/transfer`
+           
+        }
+    </script>
+</body>
+</html>

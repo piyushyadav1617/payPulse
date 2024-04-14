@@ -37,6 +37,11 @@ const authOptions: NextAuthOptions = {
               existingUser.password
             );
             if (passwordValidation) {
+              console.log({
+                id: existingUser.id.toString(),
+                name: existingUser.name,
+                email: existingUser.number,
+              })
               return {
                 id: existingUser.id.toString(),
                 name: existingUser.name,
@@ -57,13 +62,17 @@ const authOptions: NextAuthOptions = {
                 },
               },
             });
-
+            console.log({
+              id: user.id.toString(),
+              name: user.name,
+              email: user.number,
+            })
             return {
               id: user.id.toString(),
               name: user.name,
               email: user.number,
             };
-            // return user;
+         
           }
         } catch (error) {
           console.log(error);
@@ -76,5 +85,13 @@ const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
+  callbacks: {
+    // TODO: can u fix the type here? Using any is bad
+    async session({ token, session }: any) {
+        session.user.id = token.sub
+
+        return session
+    }
+}
 };
 export default authOptions;

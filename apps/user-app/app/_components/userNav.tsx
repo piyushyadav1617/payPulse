@@ -28,13 +28,7 @@ export const UserNav = () => {
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          {
-            <Link href="/dashboard/account" className="w-full">
-              Account
-            </Link>
-          }
-        </DropdownMenuItem>
+        <DropdownMenuItem>Account</DropdownMenuItem>
         <DropdownMenuItem>Support</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>

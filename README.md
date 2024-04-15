@@ -40,8 +40,6 @@
 
 ## Local Development
 
-### Requirements
-
 To run this project locally, you will need
 
 - Node.js (v18 or above)
@@ -62,7 +60,7 @@ git clone https://github.com/piyushyadav1617/payPulse.git
 ```sh
  docker run -d -e POSTGRES_PASSWORD=password -e POSTGRES_DB=wallet -p 5433:5432 postgres
 ```
-5. Go to the packages/database folder and `npx prisma db push` and `npx prisma generate` to migrate the database and generate the prisma client. Please refer to the prisma docs to get the details
+5. Go to the packages/database folder and then run `npx prisma db push` & `npx prisma generate` to migrate the database and generate the prisma client. Please refer to the prisma docs to get the details
 
 6. Now in the root of the project run `npm run dev` to start all the services and apps
 

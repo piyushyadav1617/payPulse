@@ -1,3 +1,4 @@
+"use client";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,8 +7,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@repo/ui/components/ui/dropdown-menu";
-import Link from "next/link";
 import { CircleUser } from "lucide-react";
+import { signOut } from "next-auth/react";
 
 import { Button } from "@repo/ui/components/ui/button";
 import React from "react";
@@ -32,9 +33,13 @@ export const UserNav = () => {
         <DropdownMenuItem>Support</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Link href="/api/auth/signout" className="w-full">
+          <Button
+            variant={"ghost"}
+            className="w-full p-0"
+            onClick={() => signOut()}
+          >
             Log out
-          </Link>
+          </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -21,9 +21,11 @@ const Transactions = async () => {
   console.log(transactions);
   return (
     <Wrapper title="Transactions">
-      <div className="border p-2">
-      <P2pTable transactions={transactions} userId={Number(session.user.id)} />
-
+      <div className="border p-2 max-w-[1000px]">
+        <P2pTable
+          transactions={transactions}
+          userId={Number(session.user.id)}
+        />
       </div>
     </Wrapper>
   );

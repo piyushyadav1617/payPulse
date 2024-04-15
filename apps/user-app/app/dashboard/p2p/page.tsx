@@ -5,10 +5,9 @@ import { SendCard } from "../../_components/sendCard";
 const P2p = () => {
   return (
 
-    <Wrapper title="Transfer money to another User">
-      <div className="w-full h-full flex items-center justify-center ">
+    <Wrapper title="Peer-to-Peer Transfer">
+      <div className="w-full h-full flex items-center ">
       <SendCard />
-
       </div>
     </Wrapper>
   );
